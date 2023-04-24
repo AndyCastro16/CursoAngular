@@ -1,0 +1,11 @@
+<button>Borrar Ultimo Heroe</button>
+
+<ul class="list-group">
+    <li 
+    *ngFor="let hero of heroes"
+    class="list-group-item">{{ hero }} 
+       <button class="list-group-item-action btn-danger" 
+            (click)="rmHero()">Borrar Heroe
+        </button>
+    </li>
+</ul>

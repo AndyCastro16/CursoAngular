@@ -1,0 +1,15 @@
+<h1>Spiderman</h1>
+
+<ul>
+    <li>Nombre: {{ name }}</li>
+    <li>Edad: {{ age }}</li>
+    <li>Metodo: {{ getHeroData() }}</li>
+    <li>Nombre Oficial de Heroe: {{ capitalized }}</li>
+</ul>
+
+<button
+    *ngIf="name != 'Spiderman'"
+    (click)="changeRandomName()">
+    Cambiar nombre
+</button>
+<button (click)="changeRandomAge()">Cambiar Edad</button>
