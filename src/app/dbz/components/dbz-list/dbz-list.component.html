@@ -1,5 +1,7 @@
 <ul class="list-group">
-    <li class="list-group-item">a</li>
-    <li class="list-group-item">b</li>
-    <li class="list-group-item">c</li>
+    <li
+    *ngFor="let hero of characterList; let i = index" 
+    class="list-group-item">
+        {{ i + 1 }}. {{ hero.name }} - Power: {{ hero.powerLevel }}
+    </li>
 </ul>
