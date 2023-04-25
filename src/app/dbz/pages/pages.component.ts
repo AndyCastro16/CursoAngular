@@ -1,20 +1,26 @@
 import { Component } from '@angular/core';
-import { Character } from '../interfaces/characters.interace';
+import { DbzService } from '../services/dbz.service';
+
+import { Character } from './../interfaces/characters.interace';
 @Component({
   selector: 'app-main-page',
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent {
-  characters: Character[]=[
-    {
-      name: 'Krillin',
-      powerLevel: 1
-    },
-    {
-      name: 'Goku',
-      powerLevel: 300000
-    }
-  ];
+  constructor(private dbz: DbzService){
+    
+  }
 
+  get characters(): Character[]{
+    return this.dbz.characters;
+  }
+
+  rmCharacter(id: string): void {
+    this.dbz.rmCharacter(id);
+  }
+
+  onNewCharacter(character: Character): void{
+    this.dbz.onNewCharacter(character)
+  }
 }

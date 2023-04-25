@@ -1,7 +1,16 @@
-<ul class="list-group">
+<ul class="list-group" >
     <li
-    *ngFor="let hero of characterList; let i = index" 
-    class="list-group-item">
-        {{ i + 1 }}. {{ hero.name }} - Power: {{ hero.powerLevel }}
+    *ngFor="let hero of characterList; 
+    let i = index; 
+    let isEven = even" 
+    class="list-group-item d-flex justify-content-between"
+    [ngClass]="{
+        'list-group-item-dark': isEven
+    }">
+        <span>
+            {{ i + 1 }}. {{ hero.name }} - Power: {{ hero.powerLevel }}
+        </span>
+        <button class="btn btn-danger" (click)="emitCharacterId(hero.id)">X</button>
     </li>
+
 </ul>

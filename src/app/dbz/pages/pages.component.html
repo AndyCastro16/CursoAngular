@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-sm-6">
             <h4>Listado</h4>
-            <app-dbz-list [characterList]="characters"></app-dbz-list>
+            <app-dbz-list [characterList]="characters" (onDelete)="rmCharacter($event)"></app-dbz-list>
         </div>
         <div class="col-sm-6">
             <h4>Formulario de Heroe</h4>
-            <app-dbz-character></app-dbz-character>
+            <app-dbz-character (onNewCharacter)="onNewCharacter($event)"></app-dbz-character>
         </div>
     </div>
 </div>

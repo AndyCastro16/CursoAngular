@@ -1,13 +1,16 @@
-<form action="" class="row">
+<form class="row" (ngSubmit)="emitCharacter()">
     <div class="col-sm-6">
         <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control mb-2" placeholder="Iron-man" name="nombre" id="nombre">
+        <input type="text" [(ngModel)]="character.name" class="form-control mb-2" placeholder="Iron-man" name="name">
     </div>
 
     <div class="col-sm-6">
         <label for="poder" class="form-label">Poder</label>
-        <input type="text" class="form-control mb-2" placeholder="Volar" id="poder">
+        <input [(ngModel)]="character.powerLevel" 
+        type="number" class="form-control mb-2" 
+        placeholder="Volar" id="poder" name="poder">
     </div>
 
     <input type="submit" class="btn btn-primary mb-2" value="Agregar">
+    <pre>{{ character | json }}</pre>
 </form>
